@@ -17,7 +17,7 @@ module.exports = app => {
       }
       Contato.findOneAndUpdate({_id: req.body._id}, req.body, {upsert: true}, (err, result) => {
         if(err){
-          console.log("Erro contato "  + err);
+          console.log("server/routes/contato.js Erro /contact.post "  + err);
         }
         res.json(result);
       });
@@ -42,7 +42,7 @@ module.exports = app => {
                 "numero": req.body.numero,
                 "idGrupo.$.participa": req.body.idGrupo[0].participa} },
                 (err, sucesso) => {
-                  console.log(sucesso);
+                  console.log('server/routes/contato.js Erro /contact/:id_grupo.put' + sucesso);
                 }
       );
       res.json("OK");
